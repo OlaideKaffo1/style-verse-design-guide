@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap');
 
 @tailwind base;
@@ -116,15 +115,6 @@
 
   .code {
     @apply bg-muted p-2 rounded-md font-mono text-sm;
-  }
-  
-  /* Add hover styles for text elements */
-  p, h1, h2, h3, h4, h5, h6, span, a:not(.hover\:underline), li {
-    @apply transition-colors duration-200;
-  }
-  
-  p:hover, h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover, span:hover, li:hover {
-    @apply text-primary-50;
   }
 }
 

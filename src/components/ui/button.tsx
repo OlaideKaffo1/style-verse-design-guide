@@ -2,7 +2,7 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
-import { Plus } from "lucide-react"
+import { PlusCircle } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
@@ -51,7 +51,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         {...props}
       >
-        {showIcon && <Plus className="h-4 w-4" />}
+        {showIcon && <PlusCircle className="h-4 w-4" />}
         {children}
       </Comp>
     )

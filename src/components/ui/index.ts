@@ -46,7 +46,8 @@ export * from "./alert-dialog"
 export * from "./progress"
 export * from "./skeleton"
 export * from "./toast"
-export * from "./toaster"
+// Using named export to avoid conflict
+export { Toaster } from "./toaster"
 export * from "./sonner"
 
 // Navigation components

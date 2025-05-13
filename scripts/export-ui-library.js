@@ -25,6 +25,7 @@ if (!targetDir) {
 // Source directories and files to copy
 const sources = [
   { src: 'src/components/ui', dest: 'src/components/ui' },
+  { src: 'src/components/UILibrary.tsx', dest: 'src/components/UILibrary.tsx' },
   { src: 'src/lib/utils.ts', dest: 'src/lib/utils.ts' },
   { src: 'src/hooks/use-toast.ts', dest: 'src/hooks/use-toast.ts' },
   { src: 'src/hooks/use-mobile.tsx', dest: 'src/hooks/use-mobile.tsx' }
@@ -51,7 +52,10 @@ sources.forEach(({ src, dest }) => {
 });
 
 console.log('\nUI library exported successfully! 🎉');
+console.log('\nIn your new project, you can:');
+console.log('1. Import the entire library: import { UILibrary } from \'@/components/UILibrary\';');
+console.log('2. Import individual components: import { Button, Card } from \'@/components/ui\';');
 console.log('\nMake sure to:');
-console.log('1. Install the required dependencies (see README.md in the UI directory)');
-console.log('2. Configure your tailwind.config.js as described in the README');
+console.log('1. Install the required dependencies');
+console.log('2. Configure your tailwind.config.js as described in UILibrary.tsx');
 console.log('3. Add the CSS variables to your global CSS file');

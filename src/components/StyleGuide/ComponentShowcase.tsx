@@ -1,4 +1,3 @@
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -25,11 +24,10 @@ export default function ComponentShowcase() {
           <h3 className="text-lg font-medium">Button Variants</h3>
           <div className="flex flex-wrap gap-4">
             <Button variant="default">Default</Button>
-            <Button variant="destructive">Destructive</Button>
-            <Button variant="outline">Outline</Button>
             <Button variant="secondary">Secondary</Button>
             <Button variant="ghost">Ghost</Button>
             <Button variant="link">Link</Button>
+            <Button variant="cancel">Cancel</Button>
           </div>
         </div>
 
@@ -48,8 +46,8 @@ export default function ComponentShowcase() {
           <div className="flex flex-wrap items-center gap-4">
             <Button>Enabled</Button>
             <Button disabled>Disabled</Button>
-            <Button variant="outline">Outline</Button>
-            <Button variant="outline" disabled>Disabled Outline</Button>
+            <Button variant="secondary">Secondary</Button>
+            <Button variant="secondary" disabled>Disabled Secondary</Button>
           </div>
         </div>
 
@@ -58,8 +56,8 @@ export default function ComponentShowcase() {
           <ul className="list-disc pl-5 space-y-1 text-sm">
             <li>Use <code className="text-xs">default</code> for primary actions (submit, confirm)</li>
             <li>Use <code className="text-xs">secondary</code> for secondary actions</li>
-            <li>Use <code className="text-xs">destructive</code> for potentially dangerous actions</li>
-            <li>Use <code className="text-xs">outline</code> or <code className="text-xs">ghost</code> for less emphasis</li>
+            <li>Use <code className="text-xs">cancel</code> for dismissing or canceling actions</li>
+            <li>Use <code className="text-xs">ghost</code> or <code className="text-xs">link</code> for less emphasis</li>
             <li>Maintain consistent button hierarchy on each page</li>
           </ul>
           
@@ -69,8 +67,8 @@ export default function ComponentShowcase() {
 
 // Examples
 <Button>Default Button</Button>
-<Button variant="destructive">Delete</Button>
-<Button variant="outline" size="sm">Small Outline</Button>`}
+<Button variant="secondary">Secondary</Button>
+<Button variant="cancel">Cancel</Button>`}
             </pre>
           </div>
         </div>

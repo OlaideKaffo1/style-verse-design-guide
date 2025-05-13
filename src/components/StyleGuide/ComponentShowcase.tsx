@@ -1,3 +1,4 @@
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -7,6 +8,8 @@ import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { CircleCheck, AlertCircle, InfoIcon } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 export default function ComponentShowcase() {
   return (
@@ -161,6 +164,38 @@ export default function ComponentShowcase() {
               <Input id="password" placeholder="Enter your password" type="password" />
             </div>
             
+            <div className="space-y-2">
+              <Label htmlFor="dropdown">Dropdown</Label>
+              <Select>
+                <SelectTrigger id="dropdown">
+                  <SelectValue placeholder="Select an option" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="option1">Option 1</SelectItem>
+                  <SelectItem value="option2">Option 2</SelectItem>
+                  <SelectItem value="option3">Option 3</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            
+            <div className="space-y-2">
+              <Label>Radio Options</Label>
+              <RadioGroup defaultValue="option1" className="mt-2">
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="option1" id="option1" />
+                  <Label htmlFor="option1">Option 1</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="option2" id="option2" />
+                  <Label htmlFor="option2">Option 2</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="option3" id="option3" />
+                  <Label htmlFor="option3">Option 3</Label>
+                </div>
+              </RadioGroup>
+            </div>
+            
             <div className="flex items-center space-x-2 pt-2">
               <Checkbox id="terms" />
               <Label htmlFor="terms">Accept terms and conditions</Label>
@@ -178,6 +213,18 @@ export default function ComponentShowcase() {
             <div className="space-y-2">
               <Label htmlFor="disabled-input">Disabled</Label>
               <Input id="disabled-input" placeholder="Disabled input" disabled />
+            </div>
+            
+            <div className="space-y-2">
+              <Label htmlFor="dropdown-disabled">Disabled Dropdown</Label>
+              <Select disabled>
+                <SelectTrigger id="dropdown-disabled">
+                  <SelectValue placeholder="Select an option" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="option1">Option 1</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
             
             <div className="space-y-2">
@@ -200,17 +247,39 @@ export default function ComponentShowcase() {
             <li>Group related form fields together</li>
             <li>Use appropriate input types (email, password, number, etc.)</li>
             <li>Consider using placeholder text to provide additional context</li>
+            <li>Use dropdowns when users need to select from a predefined list of options</li>
+            <li>Use radio buttons when users need to select exactly one option from a visible list</li>
           </ul>
           
           <div className="mt-4">
             <pre className="text-xs bg-background p-3 rounded overflow-x-auto">
-{`import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
+{`// Example of dropdown
+import { Select, SelectContent, SelectItem, 
+  SelectTrigger, SelectValue } from "@/components/ui/select";
 
-<div className="space-y-2">
-  <Label htmlFor="email">Email</Label>
-  <Input id="email" type="email" placeholder="example@email.com" />
-</div>`}
+<Select>
+  <SelectTrigger>
+    <SelectValue placeholder="Select option" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="option1">Option 1</SelectItem>
+    <SelectItem value="option2">Option 2</SelectItem>
+  </SelectContent>
+</Select>
+
+// Example of radio buttons
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+
+<RadioGroup defaultValue="option1">
+  <div className="flex items-center space-x-2">
+    <RadioGroupItem value="option1" id="option1" />
+    <Label htmlFor="option1">Option 1</Label>
+  </div>
+  <div className="flex items-center space-x-2">
+    <RadioGroupItem value="option2" id="option2" />
+    <Label htmlFor="option2">Option 2</Label>
+  </div>
+</RadioGroup>`}
             </pre>
           </div>
         </div>

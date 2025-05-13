@@ -330,15 +330,6 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
             <Badge variant="completed">Completed</Badge>
             <Badge variant="cancelled">Cancelled</Badge>
           </div>
-          
-          <h3 className="text-lg font-medium mt-4">Standard Badges</h3>
-          
-          <div className="flex flex-wrap gap-3">
-            <Badge>Default</Badge>
-            <Badge variant="secondary">Secondary</Badge>
-            <Badge variant="outline">Outline</Badge>
-            <Badge variant="destructive">Destructive</Badge>
-          </div>
         </div>
 
         <div className="bg-muted p-4 rounded-md">

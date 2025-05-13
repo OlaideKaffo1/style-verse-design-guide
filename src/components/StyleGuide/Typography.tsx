@@ -141,7 +141,7 @@ export default function Typography() {
         <h3 className="text-lg font-medium mb-4">Font Families</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="border rounded-lg p-6">
-            <h4 className="font-sans text-2xl mb-2">Inter (Sans-serif)</h4>
+            <h4 className="font-sans text-2xl mb-2">DM Sans (Sans-serif)</h4>
             <p className="font-sans mb-4">
               ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
               abcdefghijklmnopqrstuvwxyz<br />

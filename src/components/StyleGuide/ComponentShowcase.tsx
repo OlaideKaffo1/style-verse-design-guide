@@ -1,4 +1,3 @@
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -323,7 +322,16 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
         </div>
 
         <div className="space-y-4">
-          <h3 className="text-lg font-medium">Badges</h3>
+          <h3 className="text-lg font-medium">Status Badges</h3>
+          
+          <div className="flex flex-wrap gap-3">
+            <Badge variant="inProgress">In progress</Badge>
+            <Badge variant="live">Live</Badge>
+            <Badge variant="completed">Completed</Badge>
+            <Badge variant="cancelled">Cancelled</Badge>
+          </div>
+          
+          <h3 className="text-lg font-medium mt-4">Standard Badges</h3>
           
           <div className="flex flex-wrap gap-3">
             <Badge>Default</Badge>
@@ -338,20 +346,20 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
           <ul className="list-disc pl-5 space-y-1 text-sm">
             <li>Use alerts to provide important feedback or information</li>
             <li>Use badges to highlight status, categories, or counts</li>
+            <li>Status badges (In progress, Live, Completed, Cancelled) should be used to indicate the state of an item</li>
             <li>Ensure feedback components are accessible and descriptive</li>
             <li>Use appropriate colors to convey meaning (success, error, warning)</li>
           </ul>
           
           <div className="mt-4">
             <pre className="text-xs bg-background p-3 rounded overflow-x-auto">
-{`import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
-import { InfoIcon } from "lucide-react";
+{`import { Badge } from "@/components/ui/badge";
 
-<Alert>
-  <InfoIcon className="h-4 w-4" />
-  <AlertTitle>Information</AlertTitle>
-  <AlertDescription>Important message here.</AlertDescription>
-</Alert>`}
+// Status badges
+<Badge variant="inProgress">In progress</Badge>
+<Badge variant="live">Live</Badge>
+<Badge variant="completed">Completed</Badge>
+<Badge variant="cancelled">Cancelled</Badge>`}
             </pre>
           </div>
         </div>

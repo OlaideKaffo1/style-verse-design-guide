@@ -1,0 +1,284 @@
+
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { CircleCheck, AlertCircle, InfoIcon } from "lucide-react";
+
+export default function ComponentShowcase() {
+  return (
+    <Tabs defaultValue="buttons">
+      <TabsList className="mb-4">
+        <TabsTrigger value="buttons">Buttons</TabsTrigger>
+        <TabsTrigger value="cards">Cards</TabsTrigger>
+        <TabsTrigger value="forms">Form Inputs</TabsTrigger>
+        <TabsTrigger value="feedback">Feedback</TabsTrigger>
+      </TabsList>
+
+      {/* Buttons */}
+      <TabsContent value="buttons" className="space-y-6">
+        <div className="space-y-4">
+          <h3 className="text-lg font-medium">Button Variants</h3>
+          <div className="flex flex-wrap gap-4">
+            <Button variant="default">Default</Button>
+            <Button variant="destructive">Destructive</Button>
+            <Button variant="outline">Outline</Button>
+            <Button variant="secondary">Secondary</Button>
+            <Button variant="ghost">Ghost</Button>
+            <Button variant="link">Link</Button>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <h3 className="text-lg font-medium">Button Sizes</h3>
+          <div className="flex flex-wrap items-center gap-4">
+            <Button size="lg">Large</Button>
+            <Button size="default">Default</Button>
+            <Button size="sm">Small</Button>
+            <Button size="icon"><InfoIcon className="h-4 w-4" /></Button>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <h3 className="text-lg font-medium">Button States</h3>
+          <div className="flex flex-wrap items-center gap-4">
+            <Button>Enabled</Button>
+            <Button disabled>Disabled</Button>
+            <Button variant="outline">Outline</Button>
+            <Button variant="outline" disabled>Disabled Outline</Button>
+          </div>
+        </div>
+
+        <div className="bg-muted p-4 rounded-md">
+          <h3 className="text-sm font-medium mb-3">Usage Guidelines</h3>
+          <ul className="list-disc pl-5 space-y-1 text-sm">
+            <li>Use <code className="text-xs">default</code> for primary actions (submit, confirm)</li>
+            <li>Use <code className="text-xs">secondary</code> for secondary actions</li>
+            <li>Use <code className="text-xs">destructive</code> for potentially dangerous actions</li>
+            <li>Use <code className="text-xs">outline</code> or <code className="text-xs">ghost</code> for less emphasis</li>
+            <li>Maintain consistent button hierarchy on each page</li>
+          </ul>
+          
+          <div className="mt-4">
+            <pre className="text-xs bg-background p-3 rounded overflow-x-auto">
+{`import { Button } from "@/components/ui/button";
+
+// Examples
+<Button>Default Button</Button>
+<Button variant="destructive">Delete</Button>
+<Button variant="outline" size="sm">Small Outline</Button>`}
+            </pre>
+          </div>
+        </div>
+      </TabsContent>
+
+      {/* Cards */}
+      <TabsContent value="cards" className="space-y-6">
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
+          <div>
+            <h3 className="text-lg font-medium mb-4">Basic Card</h3>
+            <Card>
+              <CardHeader>
+                <CardTitle>Card Title</CardTitle>
+                <CardDescription>Card description or subtitle</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>This is the main content area of the card. Cards are used to group related information and actions.</p>
+              </CardContent>
+              <CardFooter className="flex justify-between">
+                <Button variant="ghost">Cancel</Button>
+                <Button>Submit</Button>
+              </CardFooter>
+            </Card>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-medium mb-4">Card with Badge</h3>
+            <Card>
+              <CardHeader className="flex flex-row items-start justify-between space-y-0">
+                <div>
+                  <CardTitle>Feature Card</CardTitle>
+                  <CardDescription>With status badge</CardDescription>
+                </div>
+                <Badge>New</Badge>
+              </CardHeader>
+              <CardContent>
+                <p>Cards can include various UI elements like badges, images, and interactive components.</p>
+              </CardContent>
+              <CardFooter>
+                <Button variant="outline" className="w-full">View Details</Button>
+              </CardFooter>
+            </Card>
+          </div>
+        </div>
+
+        <div className="bg-muted p-4 rounded-md">
+          <h3 className="text-sm font-medium mb-3">Usage Guidelines</h3>
+          <ul className="list-disc pl-5 space-y-1 text-sm">
+            <li>Use cards to group related content and actions</li>
+            <li>Maintain consistent padding and spacing within cards</li>
+            <li>Use the card header for titles and descriptions</li>
+            <li>Place primary actions in the card footer</li>
+          </ul>
+          
+          <div className="mt-4">
+            <pre className="text-xs bg-background p-3 rounded overflow-x-auto">
+{`import { Card, CardHeader, CardTitle, CardDescription, 
+  CardContent, CardFooter } from "@/components/ui/card";
+
+<Card>
+  <CardHeader>
+    <CardTitle>Card Title</CardTitle>
+    <CardDescription>Card description</CardDescription>
+  </CardHeader>
+  <CardContent>
+    {/* Content here */}
+  </CardContent>
+  <CardFooter>
+    {/* Actions here */}
+  </CardFooter>
+</Card>`}
+            </pre>
+          </div>
+        </div>
+      </TabsContent>
+
+      {/* Form Inputs */}
+      <TabsContent value="forms" className="space-y-6">
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
+          <div className="space-y-4">
+            <h3 className="text-lg font-medium">Basic Inputs</h3>
+            
+            <div className="space-y-2">
+              <Label htmlFor="email">Email</Label>
+              <Input id="email" placeholder="Enter your email" type="email" />
+            </div>
+            
+            <div className="space-y-2">
+              <Label htmlFor="password">Password</Label>
+              <Input id="password" placeholder="Enter your password" type="password" />
+            </div>
+            
+            <div className="flex items-center space-x-2 pt-2">
+              <Checkbox id="terms" />
+              <Label htmlFor="terms">Accept terms and conditions</Label>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-lg font-medium">Input States</h3>
+            
+            <div className="space-y-2">
+              <Label htmlFor="default-input">Default</Label>
+              <Input id="default-input" placeholder="Default state" />
+            </div>
+            
+            <div className="space-y-2">
+              <Label htmlFor="disabled-input">Disabled</Label>
+              <Input id="disabled-input" placeholder="Disabled input" disabled />
+            </div>
+            
+            <div className="space-y-2">
+              <Label htmlFor="error-input" className="text-destructive">Error</Label>
+              <Input 
+                id="error-input" 
+                placeholder="Invalid input" 
+                className="border-destructive focus-visible:ring-destructive" 
+              />
+              <p className="text-xs text-destructive">This field has an error.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-muted p-4 rounded-md">
+          <h3 className="text-sm font-medium mb-3">Usage Guidelines</h3>
+          <ul className="list-disc pl-5 space-y-1 text-sm">
+            <li>Always use labels with form inputs for accessibility</li>
+            <li>Provide clear validation messages for form errors</li>
+            <li>Group related form fields together</li>
+            <li>Use appropriate input types (email, password, number, etc.)</li>
+            <li>Consider using placeholder text to provide additional context</li>
+          </ul>
+          
+          <div className="mt-4">
+            <pre className="text-xs bg-background p-3 rounded overflow-x-auto">
+{`import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+
+<div className="space-y-2">
+  <Label htmlFor="email">Email</Label>
+  <Input id="email" type="email" placeholder="example@email.com" />
+</div>`}
+            </pre>
+          </div>
+        </div>
+      </TabsContent>
+
+      {/* Feedback Components */}
+      <TabsContent value="feedback" className="space-y-6">
+        <div className="space-y-4">
+          <h3 className="text-lg font-medium">Alerts</h3>
+          
+          <Alert>
+            <InfoIcon className="h-4 w-4" />
+            <AlertTitle>Information</AlertTitle>
+            <AlertDescription>
+              This is an informational alert to provide guidance or context.
+            </AlertDescription>
+          </Alert>
+          
+          <Alert variant="destructive">
+            <AlertCircle className="h-4 w-4" />
+            <AlertTitle>Error</AlertTitle>
+            <AlertDescription>
+              Something went wrong. Please try again later.
+            </AlertDescription>
+          </Alert>
+          
+          <div className="flex items-center p-4 text-sm rounded-md border border-green-200 bg-green-50 dark:bg-green-900/20 dark:border-green-900 text-green-800 dark:text-green-200">
+            <CircleCheck className="h-4 w-4 mr-2 flex-shrink-0" />
+            <div>Operation completed successfully.</div>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <h3 className="text-lg font-medium">Badges</h3>
+          
+          <div className="flex flex-wrap gap-3">
+            <Badge>Default</Badge>
+            <Badge variant="secondary">Secondary</Badge>
+            <Badge variant="outline">Outline</Badge>
+            <Badge variant="destructive">Destructive</Badge>
+          </div>
+        </div>
+
+        <div className="bg-muted p-4 rounded-md">
+          <h3 className="text-sm font-medium mb-3">Usage Guidelines</h3>
+          <ul className="list-disc pl-5 space-y-1 text-sm">
+            <li>Use alerts to provide important feedback or information</li>
+            <li>Use badges to highlight status, categories, or counts</li>
+            <li>Ensure feedback components are accessible and descriptive</li>
+            <li>Use appropriate colors to convey meaning (success, error, warning)</li>
+          </ul>
+          
+          <div className="mt-4">
+            <pre className="text-xs bg-background p-3 rounded overflow-x-auto">
+{`import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
+import { InfoIcon } from "lucide-react";
+
+<Alert>
+  <InfoIcon className="h-4 w-4" />
+  <AlertTitle>Information</AlertTitle>
+  <AlertDescription>Important message here.</AlertDescription>
+</Alert>`}
+            </pre>
+          </div>
+        </div>
+      </TabsContent>
+    </Tabs>
+  );
+}

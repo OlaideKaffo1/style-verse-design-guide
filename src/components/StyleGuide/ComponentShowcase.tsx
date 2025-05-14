@@ -30,6 +30,7 @@ export default function ComponentShowcase() {
             <Button variant="ghost">Ghost</Button>
             <Button variant="link">Link</Button>
             <Button variant="cancel">Cancel</Button>
+            <Button variant="delete">Delete</Button>
           </div>
         </div>
 
@@ -68,6 +69,7 @@ export default function ComponentShowcase() {
             <li>Use <code className="text-xs">secondary</code> for secondary actions</li>
             <li>Use <code className="text-xs">defaultWithIcon</code> or <code className="text-xs">secondaryWithIcon</code> for actions that add or create</li>
             <li>Use <code className="text-xs">cancel</code> for dismissing or canceling actions</li>
+            <li>Use <code className="text-xs">delete</code> for delete actions</li>
             <li>Use <code className="text-xs">ghost</code> or <code className="text-xs">link</code> for less emphasis</li>
             <li>Maintain consistent button hierarchy on each page</li>
           </ul>
@@ -80,7 +82,8 @@ export default function ComponentShowcase() {
 <Button>Default Button</Button>
 <Button variant="secondary">Secondary</Button>
 <Button variant="defaultWithIcon">Add Item</Button>
-<Button variant="cancel">Cancel</Button>`}
+<Button variant="cancel">Cancel</Button>
+<Button variant="delete">Delete</Button>`}
             </pre>
           </div>
         </div>

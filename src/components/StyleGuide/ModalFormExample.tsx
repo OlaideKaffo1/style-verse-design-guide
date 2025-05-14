@@ -11,6 +11,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import {
@@ -54,9 +55,9 @@ export default function ModalFormExample() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>Open Form Modal</Button>
+        <Button variant="secondary">Open Form Modal</Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[425px] bg-white">
         <DialogHeader>
           <DialogTitle>User Information</DialogTitle>
           <DialogDescription>
@@ -122,7 +123,10 @@ export default function ModalFormExample() {
                 </FormItem>
               )}
             />
-            <DialogFooter>
+            <DialogFooter className="pt-4">
+              <DialogClose asChild>
+                <Button variant="cancel" type="button">Cancel</Button>
+              </DialogClose>
               <Button type="submit">Save changes</Button>
             </DialogFooter>
           </form>

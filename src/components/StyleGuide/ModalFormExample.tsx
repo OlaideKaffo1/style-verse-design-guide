@@ -57,7 +57,7 @@ export default function ModalFormExample() {
       <DialogTrigger asChild>
         <Button variant="secondary">Open Form Modal</Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px] bg-white">
+      <DialogContent className="sm:max-w-[550px] bg-white">
         <DialogHeader>
           <DialogTitle>User Information</DialogTitle>
           <DialogDescription>

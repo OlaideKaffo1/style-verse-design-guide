@@ -1,3 +1,4 @@
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -27,7 +28,6 @@ export default function ComponentShowcase() {
           <div className="flex flex-wrap gap-4">
             <Button variant="default">Default</Button>
             <Button variant="secondary">Secondary</Button>
-            <Button variant="ghost">Ghost</Button>
             <Button variant="link">Link</Button>
             <Button variant="cancel">Cancel</Button>
             <Button variant="delete">Delete</Button>
@@ -70,7 +70,7 @@ export default function ComponentShowcase() {
             <li>Use <code className="text-xs">defaultWithIcon</code> or <code className="text-xs">secondaryWithIcon</code> for actions that add or create</li>
             <li>Use <code className="text-xs">cancel</code> for dismissing or canceling actions</li>
             <li>Use <code className="text-xs">delete</code> for delete actions</li>
-            <li>Use <code className="text-xs">ghost</code> or <code className="text-xs">link</code> for less emphasis</li>
+            <li>Use <code className="text-xs">link</code> for less emphasis</li>
             <li>Maintain consistent button hierarchy on each page</li>
           </ul>
           

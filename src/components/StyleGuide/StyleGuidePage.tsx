@@ -1,10 +1,10 @@
-
 import { useEffect } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ColorPalette from "./ColorPalette";
 import Typography from "./Typography";
 import ComponentShowcase from "./ComponentShowcase";
 import UsageGuidelines from "./UsageGuidelines";
+import ModalFormExample from "./ModalFormExample";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 export default function StyleGuidePage() {
@@ -40,6 +40,7 @@ export default function StyleGuidePage() {
                   <a href="#colors" className="block py-2 px-3 hover:bg-muted rounded-md">Colors</a>
                   <a href="#typography" className="block py-2 px-3 hover:bg-muted rounded-md">Typography</a>
                   <a href="#components" className="block py-2 px-3 hover:bg-muted rounded-md">Components</a>
+                  <a href="#modals" className="block py-2 px-3 hover:bg-muted rounded-md">Modals</a>
                   <a href="#usage" className="block py-2 px-3 hover:bg-muted rounded-md">Usage Guidelines</a>
                 </nav>
               </CardContent>
@@ -120,6 +121,57 @@ export default function StyleGuidePage() {
               </CardHeader>
               <CardContent>
                 <ComponentShowcase />
+              </CardContent>
+            </Card>
+          </section>
+
+          {/* Modals */}
+          <section id="modals" className="scroll-mt-4">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl">Modals & Dialogs</CardTitle>
+                <CardDescription>
+                  Dialog and modal components with form integration
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-8">
+                  <div>
+                    <h3 className="text-lg font-medium mb-4">Form Modal</h3>
+                    <ModalFormExample />
+                    
+                    <div className="mt-6 bg-muted p-4 rounded-md">
+                      <h3 className="text-sm font-medium mb-3">Usage Guidelines</h3>
+                      <ul className="list-disc pl-5 space-y-1 text-sm">
+                        <li>Use modals for focused tasks that require immediate attention</li>
+                        <li>Keep modal forms simple and focused on a single task</li>
+                        <li>Provide clear submit and cancel actions</li>
+                        <li>Validate form inputs in real-time when possible</li>
+                        <li>Show descriptive error messages for invalid inputs</li>
+                      </ul>
+                      
+                      <div className="mt-4">
+                        <pre className="text-xs bg-background p-3 rounded overflow-x-auto">
+{`import { Dialog, DialogContent, DialogHeader, 
+  DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+
+<Dialog>
+  <DialogTrigger asChild>
+    <Button>Open Modal</Button>
+  </DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Modal Title</DialogTitle>
+    </DialogHeader>
+    {/* Form content here */}
+  </DialogContent>
+</Dialog>`}
+                        </pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </section>

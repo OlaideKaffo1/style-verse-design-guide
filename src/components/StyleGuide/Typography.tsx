@@ -74,7 +74,7 @@ const textStyles = [
   },
   {
     name: "Code",
-    className: "font-mono text-sm bg-muted p-2 rounded",
+    className: "text-sm bg-muted p-2 rounded",
     element: "code",
     sample: 'const greeting = "Hello, world!";',
     usage: "Code snippets, technical content"
@@ -139,7 +139,7 @@ export default function Typography() {
       {/* Font Families */}
       <div>
         <h3 className="text-lg font-medium mb-4">Font Families</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4">
           <div className="border rounded-lg p-6">
             <h4 className="font-sans text-2xl mb-2">DM Sans (Sans-serif)</h4>
             <p className="font-sans mb-4">
@@ -149,17 +149,6 @@ export default function Typography() {
             </p>
             <code className="text-xs bg-muted p-1 rounded">font-sans</code>
             <p className="text-sm text-muted-foreground mt-3">Used for all general UI text, headings, and content.</p>
-          </div>
-          
-          <div className="border rounded-lg p-6">
-            <h4 className="font-mono text-2xl mb-2">Roboto Mono</h4>
-            <p className="font-mono mb-4">
-              ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
-              abcdefghijklmnopqrstuvwxyz<br />
-              0123456789
-            </p>
-            <code className="text-xs bg-muted p-1 rounded">font-mono</code>
-            <p className="text-sm text-muted-foreground mt-3">Used for code blocks, technical information, and tabular data.</p>
           </div>
         </div>
       </div>

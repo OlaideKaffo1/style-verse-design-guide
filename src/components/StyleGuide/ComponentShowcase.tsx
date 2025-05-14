@@ -1,7 +1,6 @@
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
@@ -91,42 +90,20 @@ export default function ComponentShowcase() {
 
       {/* Cards */}
       <TabsContent value="cards" className="space-y-6">
-        <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
-          <div>
-            <h3 className="text-lg font-medium mb-4">Basic Card</h3>
-            <Card>
-              <CardHeader>
-                <CardTitle>Card Title</CardTitle>
-                <CardDescription>Card description or subtitle</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p>This is the main content area of the card. Cards are used to group related information and actions.</p>
-              </CardContent>
-              <CardFooter className="flex justify-between">
-                <Button variant="ghost">Cancel</Button>
-                <Button>Submit</Button>
-              </CardFooter>
-            </Card>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-medium mb-4">Card with Badge</h3>
-            <Card>
-              <CardHeader className="flex flex-row items-start justify-between space-y-0">
-                <div>
-                  <CardTitle>Feature Card</CardTitle>
-                  <CardDescription>With status badge</CardDescription>
-                </div>
-                <Badge>New</Badge>
-              </CardHeader>
-              <CardContent>
-                <p>Cards can include various UI elements like badges, images, and interactive components.</p>
-              </CardContent>
-              <CardFooter>
-                <Button variant="outline" className="w-full">View Details</Button>
-              </CardFooter>
-            </Card>
-          </div>
+        <div className="space-y-6">
+          <h3 className="text-lg font-medium">Card Component</h3>
+          <Card>
+            <CardHeader className="flex flex-row items-start justify-between space-y-0">
+              <div>
+                <CardTitle>Feature Card</CardTitle>
+                <CardDescription>Standard card with badge</CardDescription>
+              </div>
+              <Badge variant="live">Live</Badge>
+            </CardHeader>
+            <CardContent>
+              <p>Cards group related content and information. Use this standardized card layout throughout your application for consistency.</p>
+            </CardContent>
+          </Card>
         </div>
 
         <div className="bg-muted p-4 rounded-md">
@@ -135,25 +112,27 @@ export default function ComponentShowcase() {
             <li>Use cards to group related content and actions</li>
             <li>Maintain consistent padding and spacing within cards</li>
             <li>Use the card header for titles and descriptions</li>
-            <li>Place primary actions in the card footer</li>
+            <li>Add a badge in the top right to indicate status</li>
+            <li>Keep card content focused and concise</li>
           </ul>
           
           <div className="mt-4">
             <pre className="text-xs bg-background p-3 rounded overflow-x-auto">
 {`import { Card, CardHeader, CardTitle, CardDescription, 
-  CardContent, CardFooter } from "@/components/ui/card";
+  CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 <Card>
-  <CardHeader>
-    <CardTitle>Card Title</CardTitle>
-    <CardDescription>Card description</CardDescription>
+  <CardHeader className="flex flex-row items-start justify-between space-y-0">
+    <div>
+      <CardTitle>Card Title</CardTitle>
+      <CardDescription>Card description</CardDescription>
+    </div>
+    <Badge variant="live">Live</Badge>
   </CardHeader>
   <CardContent>
     {/* Content here */}
   </CardContent>
-  <CardFooter>
-    {/* Actions here */}
-  </CardFooter>
 </Card>`}
             </pre>
           </div>

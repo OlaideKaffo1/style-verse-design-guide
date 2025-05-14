@@ -52,18 +52,6 @@ const secondaryShades: ColorShade[] = [
   { shade: "900", variable: "--secondary-900", className: "bg-secondary-900" },
 ];
 
-// Neutral shades
-const neutralShades: ColorVariant[] = [
-  { name: "Neutral Gray", variable: "#8E9196", className: "bg-[#8E9196]" },
-  { name: "Charcoal Gray", variable: "#403E43", className: "bg-[#403E43] text-white" },
-  { name: "Medium Gray", variable: "#8A898C", className: "bg-[#8A898C]" },
-  { name: "Light Gray", variable: "#F6F6F7", className: "bg-[#F6F6F7]" },
-  { name: "Silver Gray", variable: "#9F9EA1", className: "bg-[#9F9EA1]" },
-  { name: "Dark Gray", variable: "#222222", className: "bg-[#222222] text-white" },
-  { name: "Cool Gray", variable: "#AAADB0", className: "bg-[#AAADB0]" },
-  { name: "Off White", variable: "#EEEEEE", className: "bg-[#EEEEEE]" },
-];
-
 // Semantic colors
 const semanticColors: ColorVariant[] = [
   { name: "Background", variable: "--background", className: "bg-background" },
@@ -85,24 +73,6 @@ export default function ColorPalette() {
           {colorVariants.map((color) => (
             <div key={color.name} className="border rounded-lg overflow-hidden">
               <div className={cn("h-24", color.className)} />
-              <div className="p-3">
-                <p className="font-medium">{color.name}</p>
-                <code className="text-xs text-muted-foreground">{color.variable}</code>
-                <p className="text-xs mt-1 font-mono">{color.className}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <h3 className="text-lg font-medium mb-4">Neutral Shades</h3>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-          {neutralShades.map((color) => (
-            <div key={color.name} className="border rounded-lg overflow-hidden">
-              <div className={cn("h-16 flex items-center justify-center", color.className)}>
-                <span>{color.name}</span>
-              </div>
               <div className="p-3">
                 <p className="font-medium">{color.name}</p>
                 <code className="text-xs text-muted-foreground">{color.variable}</code>
@@ -170,7 +140,6 @@ export default function ColorPalette() {
         <ul className="list-disc pl-5 space-y-1 text-sm">
           <li>Use <code className="text-xs">primary</code> for main actions, links, and key UI elements</li>
           <li>Use <code className="text-xs">secondary</code> for supporting elements and less emphasized actions</li>
-          <li>Use neutral colors for backgrounds, text, and subtle UI elements</li>
           <li>Use semantic colors for their intended purposes to maintain consistency</li>
           <li>Ensure sufficient contrast between text and background colors</li>
           <li>Use color shades to create visual hierarchy and depth</li>

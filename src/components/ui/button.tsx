@@ -2,7 +2,7 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
-import { PlusCircle } from "lucide-react"
+import { PlusCircle, Trash2 } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
@@ -19,6 +19,7 @@ const buttonVariants = cva(
         outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         defaultWithIcon: "bg-primary text-primary-foreground hover:bg-primary/90",
         secondaryWithIcon: "bg-white text-primary border border-primary hover:bg-accent hover:text-primary",
+        delete: "bg-[#FEECE8] text-destructive border border-[#FF8989] hover:bg-[#FEECE8]/90",
       },
       size: {
         default: "h-10 px-4 py-2",
@@ -44,6 +45,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, children, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
     const showIcon = variant === 'defaultWithIcon' || variant === 'secondaryWithIcon'
+    const showDeleteIcon = variant === 'delete'
     
     return (
       <Comp
@@ -52,6 +54,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         {showIcon && <PlusCircle className="h-4 w-4" />}
+        {showDeleteIcon && <Trash2 className="h-4 w-4" />}
         {children}
       </Comp>
     )

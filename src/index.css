@@ -45,7 +45,7 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 260 100% 98%; /* Updated from original to match #F4F3FF */
+    --accent: 255 100% 95%; /* Updated from #F4F3FF to match #EBE9FE */
     --accent-foreground: 222 47% 11%;
 
     --destructive: 0 84% 60%;
@@ -86,7 +86,7 @@
     --muted: 217 33% 18%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 260 100% 98%; /* Updated from original to match #F4F3FF */
+    --accent: 255 100% 95%; /* Updated from #F4F3FF to match #EBE9FE */
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62% 30%;

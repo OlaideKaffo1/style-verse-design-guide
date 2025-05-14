@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ColorPalette from "./ColorPalette";
@@ -23,7 +24,7 @@ export default function StyleGuidePage() {
   return (
     <div className="container py-10 max-w-7xl mx-auto">
       <div className="mb-10">
-        <h1 className="text-4xl font-bold gradient-heading mb-2">Lovable Design System</h1>
+        <h1 className="text-4xl font-bold gradient-heading mb-2">FOUNT Style Guide</h1>
         <p className="text-muted-foreground text-lg">
           A comprehensive guide to our design tokens, components, and usage guidelines
         </p>

@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ColorPalette from "./ColorPalette";
@@ -8,7 +7,10 @@ import UsageGuidelines from "./UsageGuidelines";
 import ModalFormExample from "./ModalFormExample";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
+import { Download, FileText } from "lucide-react";
+import { Document, Paragraph, Packer, TextRun, HeadingLevel } from 'docx';
+import { saveAs } from 'file-saver';
+import { markdownContent } from '@/utils/cloneRepositoryContent';
 
 export default function StyleGuidePage() {
   // Scroll to anchor links
@@ -26,67 +28,7 @@ export default function StyleGuidePage() {
   // Function to handle the download of the CloneRepository.md file
   const handleDownloadCloneInstructions = () => {
     // Create a blob from the markdown content
-    const fileContent = `# How to Clone This Repository
-
-This guide provides step-by-step instructions for cloning this repository to your local machine.
-
-## Prerequisites
-
-Before you begin, make sure you have:
-
-- Git installed on your computer. If not, [download and install Git](https://git-scm.com/downloads)
-- A terminal or command prompt application
-- Node.js and npm installed (for running the project). You can [install Node.js using nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-## Cloning Steps
-
-1. **Open your terminal or command prompt**
-
-2. **Navigate to the directory where you want to clone the repository**
-   \`\`\`sh
-   cd path/to/desired/directory
-   \`\`\`
-
-3. **Clone the repository**
-   \`\`\`sh
-   git clone https://github.com/yourusername/your-repo-name.git
-   \`\`\`
-   Replace \`yourusername/your-repo-name\` with your actual GitHub username and repository name.
-
-4. **Navigate into the cloned repository**
-   \`\`\`sh
-   cd your-repo-name
-   \`\`\`
-
-5. **Install dependencies**
-   \`\`\`sh
-   npm install
-   \`\`\`
-
-6. **Start the development server**
-   \`\`\`sh
-   npm run dev
-   \`\`\`
-
-7. **View the project**
-   Open your browser and navigate to \`http://localhost:5173\` (or the port shown in your terminal)
-
-## Troubleshooting
-
-If you encounter any issues:
-
-- Make sure you have the correct repository URL
-- Ensure Git is properly installed and configured
-- Check that you have the necessary permissions to access the repository
-- Verify your internet connection is stable
-
-## Additional Resources
-
-- [Git documentation](https://git-scm.com/doc)
-- [GitHub Help](https://help.github.com/en)
-- [FOUNT Style Guide Documentation](https://your-documentation-url.com)`;
-
-    const blob = new Blob([fileContent], { type: 'text/markdown' });
+    const blob = new Blob([markdownContent], { type: 'text/markdown' });
     
     // Create a URL for the blob
     const url = URL.createObjectURL(blob);
@@ -103,6 +45,145 @@ If you encounter any issues:
     URL.revokeObjectURL(url);
   };
 
+  // Function to handle the download of the CloneRepository.docx file
+  const handleDownloadWordInstructions = () => {
+    // Create a new document
+    const doc = new Document({
+      sections: [{
+        properties: {},
+        children: [
+          new Paragraph({
+            text: "How to Clone This Repository",
+            heading: HeadingLevel.HEADING_1,
+          }),
+          new Paragraph({
+            text: "This guide provides step-by-step instructions for cloning this repository to your local machine.",
+          }),
+          new Paragraph({
+            text: "Prerequisites",
+            heading: HeadingLevel.HEADING_2,
+          }),
+          new Paragraph({
+            text: "Before you begin, make sure you have:",
+          }),
+          new Paragraph({
+            children: [
+              new TextRun("• Git installed on your computer. If not, download and install Git"),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun("• A terminal or command prompt application"),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun("• Node.js and npm installed (for running the project)"),
+            ],
+          }),
+          new Paragraph({
+            text: "Cloning Steps",
+            heading: HeadingLevel.HEADING_2,
+          }),
+          new Paragraph({
+            text: "1. Open your terminal or command prompt",
+          }),
+          new Paragraph({
+            text: "2. Navigate to the directory where you want to clone the repository",
+          }),
+          new Paragraph({
+            text: "cd path/to/desired/directory",
+          }),
+          new Paragraph({
+            text: "3. Clone the repository",
+          }),
+          new Paragraph({
+            text: "git clone https://github.com/yourusername/your-repo-name.git",
+          }),
+          new Paragraph({
+            text: "Replace yourusername/your-repo-name with your actual GitHub username and repository name.",
+          }),
+          new Paragraph({
+            text: "4. Navigate into the cloned repository",
+          }),
+          new Paragraph({
+            text: "cd your-repo-name",
+          }),
+          new Paragraph({
+            text: "5. Install dependencies",
+          }),
+          new Paragraph({
+            text: "npm install",
+          }),
+          new Paragraph({
+            text: "6. Start the development server",
+          }),
+          new Paragraph({
+            text: "npm run dev",
+          }),
+          new Paragraph({
+            text: "7. View the project",
+          }),
+          new Paragraph({
+            text: "Open your browser and navigate to http://localhost:5173 (or the port shown in your terminal)",
+          }),
+          new Paragraph({
+            text: "Troubleshooting",
+            heading: HeadingLevel.HEADING_2,
+          }),
+          new Paragraph({
+            text: "If you encounter any issues:",
+          }),
+          new Paragraph({
+            children: [
+              new TextRun("• Make sure you have the correct repository URL"),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun("• Ensure Git is properly installed and configured"),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun("• Check that you have the necessary permissions to access the repository"),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun("• Verify your internet connection is stable"),
+            ],
+          }),
+          new Paragraph({
+            text: "Additional Resources",
+            heading: HeadingLevel.HEADING_2,
+          }),
+          new Paragraph({
+            children: [
+              new TextRun("• Git documentation: https://git-scm.com/doc"),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun("• GitHub Help: https://help.github.com/en"),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun("• FOUNT Style Guide Documentation: https://your-documentation-url.com"),
+            ],
+          }),
+        ],
+      }]
+    });
+
+    // Generate the Word document as a blob
+    Packer.toBlob(doc).then(blob => {
+      // Save the blob as a file using FileSaver.js
+      saveAs(blob, "CloneRepository.docx");
+    });
+  };
+
   return (
     <div className="container py-10 max-w-7xl mx-auto">
       <div className="mb-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -112,13 +193,23 @@ If you encounter any issues:
             A comprehensive guide to our design tokens, components, and usage guidelines
           </p>
         </div>
-        <Button 
-          onClick={handleDownloadCloneInstructions} 
-          className="flex items-center gap-2 self-start"
-        >
-          <Download size={16} />
-          Download Clone Instructions
-        </Button>
+        <div className="flex gap-3 self-start flex-wrap">
+          <Button 
+            onClick={handleDownloadCloneInstructions} 
+            className="flex items-center gap-2"
+          >
+            <Download size={16} />
+            Download as Markdown
+          </Button>
+          <Button 
+            onClick={handleDownloadWordInstructions} 
+            className="flex items-center gap-2"
+            variant="secondary"
+          >
+            <FileText size={16} />
+            Download as Word
+          </Button>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-8">

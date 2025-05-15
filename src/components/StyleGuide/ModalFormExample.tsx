@@ -17,7 +17,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -75,9 +74,6 @@ export default function ModalFormExample() {
                   <FormControl>
                     <Input placeholder="Enter your name" {...field} />
                   </FormControl>
-                  <FormDescription>
-                    Your full name as it appears on your ID.
-                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -91,9 +87,6 @@ export default function ModalFormExample() {
                   <FormControl>
                     <Input placeholder="Enter your email" type="email" {...field} />
                   </FormControl>
-                  <FormDescription>
-                    We'll never share your email with anyone else.
-                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -116,9 +109,6 @@ export default function ModalFormExample() {
                       <SelectItem value="guest">Guest</SelectItem>
                     </SelectContent>
                   </Select>
-                  <FormDescription>
-                    Your role determines what permissions you have.
-                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}

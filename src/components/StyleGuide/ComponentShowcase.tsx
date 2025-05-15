@@ -291,7 +291,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
           </Alert>
           
           <Alert variant="error">
-            <AlertCircle className="h-4 w-4" />
+            <AlertCircle className="h-4 w-4 text-red-700 dark:text-red-400" />
             <AlertTitle>Error</AlertTitle>
             <AlertDescription>
               Something went wrong. Please try again later.

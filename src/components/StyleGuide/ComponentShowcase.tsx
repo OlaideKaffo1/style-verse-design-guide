@@ -1,3 +1,4 @@
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -289,7 +290,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
             </AlertDescription>
           </Alert>
           
-          <Alert variant="destructive">
+          <Alert variant="error">
             <AlertCircle className="h-4 w-4" />
             <AlertTitle>Error</AlertTitle>
             <AlertDescription>

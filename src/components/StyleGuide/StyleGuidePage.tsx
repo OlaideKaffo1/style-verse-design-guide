@@ -7,6 +7,8 @@ import ComponentShowcase from "./ComponentShowcase";
 import UsageGuidelines from "./UsageGuidelines";
 import ModalFormExample from "./ModalFormExample";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
 
 export default function StyleGuidePage() {
   // Scroll to anchor links
@@ -21,13 +23,102 @@ export default function StyleGuidePage() {
     }
   }, []);
 
+  // Function to handle the download of the CloneRepository.md file
+  const handleDownloadCloneInstructions = () => {
+    // Create a blob from the markdown content
+    const fileContent = `# How to Clone This Repository
+
+This guide provides step-by-step instructions for cloning this repository to your local machine.
+
+## Prerequisites
+
+Before you begin, make sure you have:
+
+- Git installed on your computer. If not, [download and install Git](https://git-scm.com/downloads)
+- A terminal or command prompt application
+- Node.js and npm installed (for running the project). You can [install Node.js using nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+## Cloning Steps
+
+1. **Open your terminal or command prompt**
+
+2. **Navigate to the directory where you want to clone the repository**
+   \`\`\`sh
+   cd path/to/desired/directory
+   \`\`\`
+
+3. **Clone the repository**
+   \`\`\`sh
+   git clone https://github.com/yourusername/your-repo-name.git
+   \`\`\`
+   Replace \`yourusername/your-repo-name\` with your actual GitHub username and repository name.
+
+4. **Navigate into the cloned repository**
+   \`\`\`sh
+   cd your-repo-name
+   \`\`\`
+
+5. **Install dependencies**
+   \`\`\`sh
+   npm install
+   \`\`\`
+
+6. **Start the development server**
+   \`\`\`sh
+   npm run dev
+   \`\`\`
+
+7. **View the project**
+   Open your browser and navigate to \`http://localhost:5173\` (or the port shown in your terminal)
+
+## Troubleshooting
+
+If you encounter any issues:
+
+- Make sure you have the correct repository URL
+- Ensure Git is properly installed and configured
+- Check that you have the necessary permissions to access the repository
+- Verify your internet connection is stable
+
+## Additional Resources
+
+- [Git documentation](https://git-scm.com/doc)
+- [GitHub Help](https://help.github.com/en)
+- [FOUNT Style Guide Documentation](https://your-documentation-url.com)`;
+
+    const blob = new Blob([fileContent], { type: 'text/markdown' });
+    
+    // Create a URL for the blob
+    const url = URL.createObjectURL(blob);
+    
+    // Create a temporary link and trigger download
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'CloneRepository.md';
+    document.body.appendChild(link);
+    link.click();
+    
+    // Clean up
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="container py-10 max-w-7xl mx-auto">
-      <div className="mb-10">
-        <h1 className="text-4xl font-bold gradient-heading mb-2">FOUNT Style Guide</h1>
-        <p className="text-muted-foreground text-lg">
-          A comprehensive guide to our design tokens, components, and usage guidelines
-        </p>
+      <div className="mb-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <h1 className="text-4xl font-bold gradient-heading mb-2">FOUNT Style Guide</h1>
+          <p className="text-muted-foreground text-lg">
+            A comprehensive guide to our design tokens, components, and usage guidelines
+          </p>
+        </div>
+        <Button 
+          onClick={handleDownloadCloneInstructions} 
+          className="flex items-center gap-2 self-start"
+        >
+          <Download size={16} />
+          Download Clone Instructions
+        </Button>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-8">

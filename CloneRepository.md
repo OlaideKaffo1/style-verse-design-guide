@@ -9,7 +9,60 @@ Before you begin, make sure you have:
 
 - Git installed on your computer. If not, [download and install Git](https://git-scm.com/downloads)
 - A terminal or command prompt application
-- Node.js and npm installed (for running the project). You can [install Node.js using nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js and npm installed. See detailed installation instructions below.
+
+## Installing Node.js and npm
+
+### Option 1: Using NVM (Recommended)
+
+NVM (Node Version Manager) is the recommended way to install Node.js as it allows you to easily switch between Node.js versions.
+
+#### For macOS and Linux:
+
+1. Install NVM by running this command in your terminal:
+   ```sh
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+   ```
+   or
+   ```sh
+   wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+   ```
+
+2. Close and reopen your terminal
+
+3. Install the latest LTS version of Node.js:
+   ```sh
+   nvm install --lts
+   ```
+
+4. Verify installation:
+   ```sh
+   node -v
+   npm -v
+   ```
+
+#### For Windows:
+
+1. Download and install [NVM for Windows](https://github.com/coreybutler/nvm-windows/releases)
+2. Open a new Command Prompt or PowerShell window
+3. Install the latest LTS version of Node.js:
+   ```sh
+   nvm install lts
+   nvm use lts
+   ```
+
+### Option 2: Direct Download
+
+You can also download and install Node.js directly:
+
+1. Visit the [Node.js download page](https://nodejs.org/)
+2. Download the LTS (Long Term Support) version
+3. Run the installer and follow the installation wizard
+4. Verify installation by opening a new terminal and running:
+   ```sh
+   node -v
+   npm -v
+   ```
 
 ## Cloning Steps
 
@@ -48,6 +101,12 @@ Before you begin, make sure you have:
 
 If you encounter any issues:
 
+### "npm: command not found" error:
+- Make sure Node.js is properly installed (see installation instructions above)
+- Try restarting your terminal after installation
+- Check if your system's PATH environment variable includes the npm directory
+
+### Other common issues:
 - Make sure you have the correct repository URL
 - Ensure Git is properly installed and configured
 - Check that you have the necessary permissions to access the repository
@@ -57,4 +116,5 @@ If you encounter any issues:
 
 - [Git documentation](https://git-scm.com/doc)
 - [GitHub Help](https://help.github.com/en)
-- [FOUNT Style Guide Documentation](https://your-documentation-url.com)
+- [Node.js documentation](https://nodejs.org/en/docs/)
+- [npm documentation](https://docs.npmjs.com/)

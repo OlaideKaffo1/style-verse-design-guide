@@ -18,6 +18,7 @@ export default function ComponentShowcase() {
         <TabsTrigger value="cards">Cards</TabsTrigger>
         <TabsTrigger value="forms">Form Inputs</TabsTrigger>
         <TabsTrigger value="feedback">Feedback</TabsTrigger>
+        <TabsTrigger value="colors">Color Codes</TabsTrigger>
       </TabsList>
 
       {/* Buttons */}
@@ -31,6 +32,12 @@ export default function ComponentShowcase() {
             <Button variant="cancel">Cancel</Button>
             <Button variant="delete">Delete</Button>
           </div>
+          <div className="mt-2 text-sm">
+            <p><span className="font-medium">Default:</span> <code className="bg-muted px-1 py-0.5 rounded">#9b87f5</code> (Primary)</p>
+            <p><span className="font-medium">Secondary:</span> Border: <code className="bg-muted px-1 py-0.5 rounded">#9b87f5</code>, BG: <code className="bg-muted px-1 py-0.5 rounded">#FFFFFF</code></p>
+            <p><span className="font-medium">Delete:</span> Border: <code className="bg-muted px-1 py-0.5 rounded">#FF8989</code>, BG: <code className="bg-muted px-1 py-0.5 rounded">#FEECE8</code></p>
+            <p><span className="font-medium">Cancel:</span> <code className="bg-muted px-1 py-0.5 rounded">#F5F7FA</code> (Muted)</p>
+          </div>
         </div>
 
         <div className="space-y-4">
@@ -38,6 +45,10 @@ export default function ComponentShowcase() {
           <div className="flex flex-wrap gap-4">
             <Button variant="defaultWithIcon">Add Item</Button>
             <Button variant="secondaryWithIcon">Add Item</Button>
+          </div>
+          <div className="mt-2 text-sm">
+            <p><span className="font-medium">Default with Icon:</span> <code className="bg-muted px-1 py-0.5 rounded">#9b87f5</code> (Primary)</p>
+            <p><span className="font-medium">Secondary with Icon:</span> Border: <code className="bg-muted px-1 py-0.5 rounded">#9b87f5</code>, BG: <code className="bg-muted px-1 py-0.5 rounded">#FFFFFF</code></p>
           </div>
         </div>
 
@@ -104,6 +115,12 @@ export default function ComponentShowcase() {
               <p>Cards group related content and information. Use this standardized card layout throughout your application for consistency.</p>
             </CardContent>
           </Card>
+          <div className="mt-2 text-sm">
+            <p><span className="font-medium">Card Background:</span> <code className="bg-muted px-1 py-0.5 rounded">#FFFFFF</code></p>
+            <p><span className="font-medium">Card Border:</span> <code className="bg-muted px-1 py-0.5 rounded">#E8EDF3</code></p>
+            <p><span className="font-medium">Card Title:</span> <code className="bg-muted px-1 py-0.5 rounded">#0F1629</code></p>
+            <p><span className="font-medium">Card Description:</span> <code className="bg-muted px-1 py-0.5 rounded">#707F96</code></p>
+          </div>
         </div>
 
         <div className="bg-muted p-4 rounded-md">
@@ -148,6 +165,7 @@ import { Badge } from "@/components/ui/badge";
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <Input id="email" placeholder="Enter your email" type="email" />
+              <p className="text-xs text-muted-foreground">Border: <code className="bg-muted px-1 py-0.5 rounded">#E8EDF3</code></p>
             </div>
             
             <div className="space-y-2">
@@ -167,6 +185,7 @@ import { Badge } from "@/components/ui/badge";
                   <SelectItem value="option3">Option 3</SelectItem>
                 </SelectContent>
               </Select>
+              <p className="text-xs text-muted-foreground">Border: <code className="bg-muted px-1 py-0.5 rounded">#E8EDF3</code></p>
             </div>
             
             <div className="space-y-2">
@@ -185,11 +204,13 @@ import { Badge } from "@/components/ui/badge";
                   <Label htmlFor="option3">Option 3</Label>
                 </div>
               </RadioGroup>
+              <p className="text-xs text-muted-foreground">Selected: <code className="bg-muted px-1 py-0.5 rounded">#9b87f5</code></p>
             </div>
             
             <div className="flex items-center space-x-2 pt-2">
               <Checkbox id="terms" />
               <Label htmlFor="terms">Accept terms and conditions</Label>
+              <p className="text-xs text-muted-foreground ml-2">Checked: <code className="bg-muted px-1 py-0.5 rounded">#9b87f5</code></p>
             </div>
           </div>
 
@@ -204,6 +225,7 @@ import { Badge } from "@/components/ui/badge";
             <div className="space-y-2">
               <Label htmlFor="disabled-input">Disabled</Label>
               <Input id="disabled-input" placeholder="Disabled input" disabled />
+              <p className="text-xs text-muted-foreground">Background: <code className="bg-muted px-1 py-0.5 rounded">#F5F7FA</code>, Opacity: 50%</p>
             </div>
             
             <div className="space-y-2">
@@ -226,6 +248,7 @@ import { Badge } from "@/components/ui/badge";
                 className="border-destructive focus-visible:ring-destructive" 
               />
               <p className="text-xs text-destructive">This field has an error.</p>
+              <p className="text-xs text-muted-foreground">Border: <code className="bg-muted px-1 py-0.5 rounded">#F43F5E</code> (Destructive)</p>
             </div>
           </div>
         </div>
@@ -288,6 +311,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
               This is an informational alert to provide guidance or context.
             </AlertDescription>
           </Alert>
+          <p className="text-xs text-muted-foreground mt-1">Border: Default, BG: <code className="bg-muted px-1 py-0.5 rounded">#F5F7FA</code></p>
           
           <Alert variant="error">
             <AlertCircle className="h-4 w-4" />
@@ -296,11 +320,13 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
               Something went wrong. Please try again later.
             </AlertDescription>
           </Alert>
+          <p className="text-xs text-muted-foreground mt-1">BG: <code className="bg-muted px-1 py-0.5 rounded">#FEECE8</code>, Text: <code className="bg-muted px-1 py-0.5 rounded">#F43F5E</code></p>
           
           <div className="flex items-center p-4 text-sm rounded-md border border-green-200 bg-green-50 dark:bg-green-900/20 dark:border-green-900 text-green-800 dark:text-green-200">
             <CircleCheck className="h-4 w-4 mr-2 flex-shrink-0" />
             <div>Operation completed successfully.</div>
           </div>
+          <p className="text-xs text-muted-foreground mt-1">BG: <code className="bg-muted px-1 py-0.5 rounded">#F2FCE2</code>, Border: <code className="bg-muted px-1 py-0.5 rounded">#22C55E</code>, Text: <code className="bg-muted px-1 py-0.5 rounded">#22C55E</code></p>
         </div>
 
         <div className="space-y-4">
@@ -311,6 +337,12 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
             <Badge variant="live">Live</Badge>
             <Badge variant="completed">Completed</Badge>
             <Badge variant="cancelled">Cancelled</Badge>
+          </div>
+          <div className="mt-2 text-sm space-y-1">
+            <p><span className="font-medium">In Progress:</span> BG: <code className="bg-muted px-1 py-0.5 rounded">#FDF6EC</code>, Text: <code className="bg-muted px-1 py-0.5 rounded">#F97316</code></p>
+            <p><span className="font-medium">Live:</span> BG: <code className="bg-muted px-1 py-0.5 rounded">#F2FCE2</code>, Text: <code className="bg-muted px-1 py-0.5 rounded">#22C55E</code></p>
+            <p><span className="font-medium">Completed:</span> BG: <code className="bg-muted px-1 py-0.5 rounded">#F2FCE2</code>, Text: <code className="bg-muted px-1 py-0.5 rounded">#22C55E</code></p>
+            <p><span className="font-medium">Cancelled:</span> BG: <code className="bg-muted px-1 py-0.5 rounded">#FEE2E2</code>, Text: <code className="bg-muted px-1 py-0.5 rounded">#F43F5E</code></p>
           </div>
         </div>
 
@@ -334,6 +366,127 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 <Badge variant="completed">Completed</Badge>
 <Badge variant="cancelled">Cancelled</Badge>`}
             </pre>
+          </div>
+        </div>
+      </TabsContent>
+
+      {/* Color Codes Tab */}
+      <TabsContent value="colors" className="space-y-6">
+        <div className="space-y-6">
+          <h3 className="text-lg font-medium">UI Element Color Codes</h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Primary Colors</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div>
+                  <div className="h-10 w-full bg-primary rounded-md mb-1"></div>
+                  <p className="text-sm font-medium">Primary</p>
+                  <code className="text-xs bg-muted px-1 py-0.5 rounded">#9b87f5</code>
+                </div>
+                <div>
+                  <div className="h-10 w-full bg-secondary rounded-md mb-1"></div>
+                  <p className="text-sm font-medium">Secondary</p>
+                  <code className="text-xs bg-muted px-1 py-0.5 rounded">#545659</code>
+                </div>
+                <div>
+                  <div className="h-10 w-full bg-accent rounded-md mb-1"></div>
+                  <p className="text-sm font-medium">Accent</p>
+                  <code className="text-xs bg-muted px-1 py-0.5 rounded">#F4F3FF</code>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Feedback Colors</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div>
+                  <div className="h-10 w-full bg-destructive rounded-md mb-1"></div>
+                  <p className="text-sm font-medium">Destructive</p>
+                  <code className="text-xs bg-muted px-1 py-0.5 rounded">#F43F5E</code>
+                </div>
+                <div>
+                  <div className="h-10 w-full bg-success rounded-md mb-1"></div>
+                  <p className="text-sm font-medium">Success</p>
+                  <code className="text-xs bg-muted px-1 py-0.5 rounded">#22C55E</code>
+                </div>
+                <div>
+                  <div className="h-10 w-full bg-warning rounded-md mb-1"></div>
+                  <p className="text-sm font-medium">Warning</p>
+                  <code className="text-xs bg-muted px-1 py-0.5 rounded">#F97316</code>
+                </div>
+                <div>
+                  <div className="h-10 w-full bg-info rounded-md mb-1"></div>
+                  <p className="text-sm font-medium">Info</p>
+                  <code className="text-xs bg-muted px-1 py-0.5 rounded">#0284C7</code>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">UI Component Colors</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div>
+                  <div className="h-10 w-full bg-background rounded-md border mb-1"></div>
+                  <p className="text-sm font-medium">Background</p>
+                  <code className="text-xs bg-muted px-1 py-0.5 rounded">#FAFCFE</code>
+                </div>
+                <div>
+                  <div className="h-10 w-full bg-foreground rounded-md mb-1"></div>
+                  <p className="text-sm font-medium">Foreground</p>
+                  <code className="text-xs bg-muted px-1 py-0.5 rounded">#0F1629</code>
+                </div>
+                <div>
+                  <div className="h-10 w-full bg-muted rounded-md mb-1"></div>
+                  <p className="text-sm font-medium">Muted</p>
+                  <code className="text-xs bg-muted px-1 py-0.5 rounded">#F5F7FA</code>
+                </div>
+                <div>
+                  <div className="h-10 w-full bg-muted-foreground rounded-md mb-1"></div>
+                  <p className="text-sm font-medium">Muted Foreground</p>
+                  <code className="text-xs bg-muted px-1 py-0.5 rounded">#707F96</code>
+                </div>
+                <div>
+                  <div className="h-10 w-full border rounded-md mb-1"></div>
+                  <p className="text-sm font-medium">Border</p>
+                  <code className="text-xs bg-muted px-1 py-0.5 rounded">#E8EDF3</code>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Form Element Colors</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div>
+                  <div className="h-10 w-full bg-input rounded-md mb-1"></div>
+                  <p className="text-sm font-medium">Input</p>
+                  <code className="text-xs bg-muted px-1 py-0.5 rounded">#E8EDF3</code>
+                </div>
+                <div>
+                  <div className="h-10 w-full bg-ring rounded-md mb-1"></div>
+                  <p className="text-sm font-medium">Ring</p>
+                  <code className="text-xs bg-muted px-1 py-0.5 rounded">#9b87f5</code>
+                </div>
+                <div>
+                  <div className="h-10 w-full bg-card rounded-md border mb-1"></div>
+                  <p className="text-sm font-medium">Card</p>
+                  <code className="text-xs bg-muted px-1 py-0.5 rounded">#FFFFFF</code>
+                </div>
+                <div>
+                  <div className="h-10 w-full bg-card-foreground rounded-md mb-1"></div>
+                  <p className="text-sm font-medium">Card Foreground</p>
+                  <code className="text-xs bg-muted px-1 py-0.5 rounded">#0F1629</code>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </TabsContent>

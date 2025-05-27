@@ -1,68 +1,69 @@
+
 import { cn } from "@/lib/utils";
 
 type ColorVariant = {
   name: string;
   variable: string;
   className: string;
-  hexCode: string;
+  hslCode: string;
 };
 
 type ColorShade = {
   shade: string;
   variable: string;
   className: string;
-  hexCode: string;
+  hslCode: string;
 };
 
 // Main colors and their variants
 const colorVariants: ColorVariant[] = [
-  { name: "Primary", variable: "--primary", className: "bg-primary", hexCode: "#8383FF" },
-  { name: "Secondary", variable: "--secondary", className: "bg-secondary", hexCode: "#545659" },
-  { name: "Accent", variable: "--accent", className: "bg-accent", hexCode: "#F4F3FF" },
-  { name: "Muted", variable: "--muted", className: "bg-muted", hexCode: "#F5F7FA" },
-  { name: "Destructive", variable: "--destructive", className: "bg-destructive", hexCode: "#F43F5E" },
-  { name: "Success", variable: "--success", className: "bg-success", hexCode: "#22C55E" },
-  { name: "Warning", variable: "--warning", className: "bg-warning", hexCode: "#F97316" },
-  { name: "Info", variable: "--info", className: "bg-info", hexCode: "#0284C7" },
+  { name: "Primary", variable: "--primary", className: "bg-primary", hslCode: "hsl(240, 100%, 75%)" },
+  { name: "Secondary", variable: "--secondary", className: "bg-secondary", hslCode: "hsl(240, 5%, 34%)" },
+  { name: "Accent", variable: "--accent", className: "bg-accent", hslCode: "hsl(260, 100%, 98%)" },
+  { name: "Muted", variable: "--muted", className: "bg-muted", hslCode: "hsl(210, 40%, 96.1%)" },
+  { name: "Destructive", variable: "--destructive", className: "bg-destructive", hslCode: "hsl(0, 84%, 60%)" },
+  { name: "Success", variable: "--success", className: "bg-success", hslCode: "hsl(142, 76%, 36%)" },
+  { name: "Warning", variable: "--warning", className: "bg-warning", hslCode: "hsl(38, 92%, 50%)" },
+  { name: "Info", variable: "--info", className: "bg-info", hslCode: "hsl(200, 98%, 39%)" },
 ];
 
 // Shades for primary and secondary
 const primaryShades: ColorShade[] = [
-  { shade: "50", variable: "--primary-50", className: "bg-primary-50", hexCode: "#F5F3FF" },
-  { shade: "100", variable: "--primary-100", className: "bg-primary-100", hexCode: "#EDEDFF" },
-  { shade: "200", variable: "--primary-200", className: "bg-primary-200", hexCode: "#D6D6FF" },
-  { shade: "300", variable: "--primary-300", className: "bg-primary-300", hexCode: "#BFBFFF" },
-  { shade: "400", variable: "--primary-400", className: "bg-primary-400", hexCode: "#A9A9FF" },
-  { shade: "500", variable: "--primary-500", className: "bg-primary-500", hexCode: "#8383FF" },
-  { shade: "600", variable: "--primary-600", className: "bg-primary-600", hexCode: "#6A6AFF" },
-  { shade: "700", variable: "--primary-700", className: "bg-primary-700", hexCode: "#5151FF" },
-  { shade: "800", variable: "--primary-800", className: "bg-primary-800", hexCode: "#3838FF" },
-  { shade: "900", variable: "--primary-900", className: "bg-primary-900", hexCode: "#1F1FFF" },
+  { shade: "50", variable: "--primary-50", className: "bg-primary-50", hslCode: "hsl(240, 100%, 97%)" },
+  { shade: "100", variable: "--primary-100", className: "bg-primary-100", hslCode: "hsl(240, 100%, 94%)" },
+  { shade: "200", variable: "--primary-200", className: "bg-primary-200", hslCode: "hsl(240, 100%, 90%)" },
+  { shade: "300", variable: "--primary-300", className: "bg-primary-300", hslCode: "hsl(240, 100%, 85%)" },
+  { shade: "400", variable: "--primary-400", className: "bg-primary-400", hslCode: "hsl(240, 100%, 80%)" },
+  { shade: "500", variable: "--primary-500", className: "bg-primary-500", hslCode: "hsl(240, 100%, 75%)" },
+  { shade: "600", variable: "--primary-600", className: "bg-primary-600", hslCode: "hsl(240, 100%, 70%)" },
+  { shade: "700", variable: "--primary-700", className: "bg-primary-700", hslCode: "hsl(240, 100%, 65%)" },
+  { shade: "800", variable: "--primary-800", className: "bg-primary-800", hslCode: "hsl(240, 100%, 60%)" },
+  { shade: "900", variable: "--primary-900", className: "bg-primary-900", hslCode: "hsl(240, 100%, 55%)" },
 ];
 
 const secondaryShades: ColorShade[] = [
-  { shade: "50", variable: "--secondary-50", className: "bg-secondary-50", hexCode: "#F9F9FA" },
-  { shade: "100", variable: "--secondary-100", className: "bg-secondary-100", hexCode: "#F1F1F2" },
-  { shade: "200", variable: "--secondary-200", className: "bg-secondary-200", hexCode: "#E3E4E5" },
-  { shade: "300", variable: "--secondary-300", className: "bg-secondary-300", hexCode: "#A5A6A9" },
-  { shade: "400", variable: "--secondary-400", className: "bg-secondary-400", hexCode: "#84868A" },
-  { shade: "500", variable: "--secondary-500", className: "bg-secondary-500", hexCode: "#545659" },
-  { shade: "600", variable: "--secondary-600", className: "bg-secondary-600", hexCode: "#3F4144" },
-  { shade: "700", variable: "--secondary-700", className: "bg-secondary-700", hexCode: "#333538" },
-  { shade: "800", variable: "--secondary-800", className: "bg-secondary-800", hexCode: "#1B1C1E" },
-  { shade: "900", variable: "--secondary-900", className: "bg-secondary-900", hexCode: "#0B0B0C" },
+  { shade: "50", variable: "--secondary-50", className: "bg-secondary-50", hslCode: "hsl(240, 5%, 96%)" },
+  { shade: "100", variable: "--secondary-100", className: "bg-secondary-100", hslCode: "hsl(240, 5%, 90%)" },
+  { shade: "200", variable: "--secondary-200", className: "bg-secondary-200", hslCode: "hsl(240, 4%, 84%)" },
+  { shade: "300", variable: "--secondary-300", className: "bg-secondary-300", hslCode: "hsl(240, 5%, 65%)" },
+  { shade: "400", variable: "--secondary-400", className: "bg-secondary-400", hslCode: "hsl(240, 5%, 52%)" },
+  { shade: "500", variable: "--secondary-500", className: "bg-secondary-500", hslCode: "hsl(240, 5%, 34%)" },
+  { shade: "600", variable: "--secondary-600", className: "bg-secondary-600", hslCode: "hsl(240, 5%, 26%)" },
+  { shade: "700", variable: "--secondary-700", className: "bg-secondary-700", hslCode: "hsl(240, 4%, 21%)" },
+  { shade: "800", variable: "--secondary-800", className: "bg-secondary-800", hslCode: "hsl(240, 6%, 10%)" },
+  { shade: "900", variable: "--secondary-900", className: "bg-secondary-900", hslCode: "hsl(240, 10%, 4%)" },
 ];
 
 // Semantic colors
 const semanticColors: ColorVariant[] = [
-  { name: "Background", variable: "--background", className: "bg-background", hexCode: "#FAFCFE" },
-  { name: "Foreground", variable: "--foreground", className: "bg-foreground text-background", hexCode: "#0F1629" },
-  { name: "Card", variable: "--card", className: "bg-card", hexCode: "#FFFFFF" },
-  { name: "Card Foreground", variable: "--card-foreground", className: "bg-card-foreground text-background", hexCode: "#0F1629" },
-  { name: "Popover", variable: "--popover", className: "bg-popover", hexCode: "#FFFFFF" },
-  { name: "Popover Foreground", variable: "--popover-foreground", className: "bg-popover-foreground text-background", hexCode: "#0F1629" },
-  { name: "Border", variable: "--border", className: "bg-border", hexCode: "#E8EDF3" },
-  { name: "Input", variable: "--input", className: "bg-input", hexCode: "#E8EDF3" },
+  { name: "Background", variable: "--background", className: "bg-background", hslCode: "hsl(210, 40%, 98%)" },
+  { name: "Foreground", variable: "--foreground", className: "bg-foreground text-background", hslCode: "hsl(222, 47%, 11%)" },
+  { name: "Card", variable: "--card", className: "bg-card", hslCode: "hsl(0, 0%, 100%)" },
+  { name: "Card Foreground", variable: "--card-foreground", className: "bg-card-foreground text-background", hslCode: "hsl(222, 47%, 11%)" },
+  { name: "Popover", variable: "--popover", className: "bg-popover", hslCode: "hsl(0, 0%, 100%)" },
+  { name: "Popover Foreground", variable: "--popover-foreground", className: "bg-popover-foreground text-background", hslCode: "hsl(222, 47%, 11%)" },
+  { name: "Border", variable: "--border", className: "bg-border", hslCode: "hsl(214, 32%, 91%)" },
+  { name: "Input", variable: "--input", className: "bg-input", hslCode: "hsl(214, 32%, 91%)" },
 ];
 
 export default function ColorPalette() {
@@ -79,7 +80,7 @@ export default function ColorPalette() {
                 <code className="text-xs text-muted-foreground">{color.variable}</code>
                 <div className="flex flex-col space-y-1 mt-2">
                   <p className="text-xs font-mono">{color.className}</p>
-                  <p className="text-xs font-mono text-secondary-600">{color.hexCode}</p>
+                  <p className="text-xs font-mono text-secondary-600">{color.hslCode}</p>
                 </div>
               </div>
             </div>
@@ -98,7 +99,7 @@ export default function ColorPalette() {
                 <code className="text-xs text-muted-foreground">{shade.variable}</code>
                 <div className="flex flex-col space-y-1 mt-2">
                   <p className="text-xs font-mono">{shade.className}</p>
-                  <p className="text-xs font-mono text-secondary-600">{shade.hexCode}</p>
+                  <p className="text-xs font-mono text-secondary-600">{shade.hslCode}</p>
                 </div>
               </div>
             </div>
@@ -117,7 +118,7 @@ export default function ColorPalette() {
                 <code className="text-xs text-muted-foreground">{shade.variable}</code>
                 <div className="flex flex-col space-y-1 mt-2">
                   <p className="text-xs font-mono">{shade.className}</p>
-                  <p className="text-xs font-mono text-secondary-600">{shade.hexCode}</p>
+                  <p className="text-xs font-mono text-secondary-600">{shade.hslCode}</p>
                 </div>
               </div>
             </div>
@@ -140,7 +141,7 @@ export default function ColorPalette() {
                 <code className="text-xs text-muted-foreground">{color.variable}</code>
                 <div className="flex flex-col space-y-1 mt-2">
                   <p className="text-xs font-mono">{color.className}</p>
-                  <p className="text-xs font-mono text-secondary-600">{color.hexCode}</p>
+                  <p className="text-xs font-mono text-secondary-600">{color.hslCode}</p>
                 </div>
               </div>
             </div>

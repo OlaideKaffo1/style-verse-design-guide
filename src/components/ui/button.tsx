@@ -44,7 +44,7 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, children, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
-    const showIcon = variant === 'defaultWithIcon' || variant === 'secondaryWithIcon'
+    const showIcon = variant === 'AddNew' || variant === 'AddNewSecondary'
     const showDeleteIcon = variant === 'delete'
     
     return (

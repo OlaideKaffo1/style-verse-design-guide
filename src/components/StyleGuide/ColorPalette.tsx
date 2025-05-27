@@ -21,7 +21,7 @@ const colorVariants: ColorVariant[] = [
   { name: "Accent", variable: "--accent", className: "bg-accent", hexCode: "#F4F3FF" },
   { name: "Muted", variable: "--muted", className: "bg-muted", hexCode: "#F5F7FA" },
   { name: "Destructive", variable: "--destructive", className: "bg-destructive", hexCode: "#F43F5E" },
-  { name: "Success", variable: "--success", className: "bg-success", hexCode: "#22C55E" },
+  { name: "Success", variable: "--success", className: "bg-success", hexCode: "#22C184" },
   { name: "Warning", variable: "--warning", className: "bg-warning", hexCode: "#F97316" },
   { name: "Info", variable: "--info", className: "bg-info", hexCode: "#0284C7" },
 ];

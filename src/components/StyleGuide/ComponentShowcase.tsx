@@ -1,4 +1,3 @@
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,23 +9,8 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { CircleCheck, AlertCircle, InfoIcon } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { MultiSelect, Option } from "@/components/ui/multi-select";
-import { useState } from "react";
 
 export default function ComponentShowcase() {
-  const [selectedItems, setSelectedItems] = useState<string[]>([]);
-  
-  const multiSelectOptions: Option[] = [
-    { label: "React", value: "react" },
-    { label: "TypeScript", value: "typescript" },
-    { label: "Tailwind CSS", value: "tailwind" },
-    { label: "Shadcn UI", value: "shadcn" },
-    { label: "Vite", value: "vite" },
-    { label: "Node.js", value: "nodejs" },
-    { label: "Next.js", value: "nextjs" },
-    { label: "Express", value: "express" },
-  ];
-
   return (
     <Tabs defaultValue="buttons">
       <TabsList className="mb-4">
@@ -184,17 +168,6 @@ import { Badge } from "@/components/ui/badge";
                 </SelectContent>
               </Select>
             </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="multiselect">Multi-Select Dropdown</Label>
-              <MultiSelect
-                options={multiSelectOptions}
-                selected={selectedItems}
-                onChange={setSelectedItems}
-                placeholder="Select technologies..."
-                className="w-full"
-              />
-            </div>
             
             <div className="space-y-2">
               <Label>Radio Options</Label>
@@ -244,17 +217,6 @@ import { Badge } from "@/components/ui/badge";
                 </SelectContent>
               </Select>
             </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="multiselect-disabled">Disabled Multi-Select</Label>
-              <MultiSelect
-                options={multiSelectOptions.slice(0, 3)}
-                selected={["react", "typescript"]}
-                onChange={() => {}}
-                placeholder="Disabled multi-select..."
-                className="pointer-events-none opacity-50"
-              />
-            </div>
             
             <div className="space-y-2">
               <Label htmlFor="error-input" className="text-destructive">Error</Label>
@@ -278,7 +240,6 @@ import { Badge } from "@/components/ui/badge";
             <li>Consider using placeholder text to provide additional context</li>
             <li>Use dropdowns when users need to select from a predefined list of options</li>
             <li>Use radio buttons when users need to select exactly one option from a visible list</li>
-            <li>Use multi-select dropdowns when users need to select multiple options from a list</li>
           </ul>
           
           <div className="mt-4">
@@ -296,21 +257,6 @@ import { Select, SelectContent, SelectItem,
     <SelectItem value="option2">Option 2</SelectItem>
   </SelectContent>
 </Select>
-
-// Example of multi-select dropdown
-import { MultiSelect, Option } from "@/components/ui/multi-select";
-
-const options: Option[] = [
-  { label: "Option 1", value: "option1" },
-  { label: "Option 2", value: "option2" },
-];
-
-<MultiSelect
-  options={options}
-  selected={selectedValues}
-  onChange={setSelectedValues}
-  placeholder="Select multiple options..."
-/>
 
 // Example of radio buttons
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";

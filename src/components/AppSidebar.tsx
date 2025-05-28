@@ -5,7 +5,6 @@ import {
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -62,14 +61,10 @@ export function AppSidebar() {
       <SidebarHeader className="border-b border-white/10 pb-4 mb-4">
         <div className="px-2">
           <h2 className="text-lg font-semibold text-white">FOUNT</h2>
-          <p className="text-sm text-white/70">Design System</p>
         </div>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel className="text-white/70 text-xs uppercase tracking-wider">
-            Navigation
-          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (

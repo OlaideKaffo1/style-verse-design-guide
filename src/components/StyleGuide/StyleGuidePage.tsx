@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ColorPalette from "./ColorPalette";
@@ -104,7 +103,7 @@ If you encounter any issues:
   };
 
   return (
-    <div className="container py-10 max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto">
       <div className="mb-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h1 className="text-4xl font-bold gradient-heading mb-2">FOUNT Style Guide</h1>

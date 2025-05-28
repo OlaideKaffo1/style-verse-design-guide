@@ -6,20 +6,9 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { CircleCheck, AlertCircle, InfoIcon, Home, Settings, Calendar, Search, Inbox } from "lucide-react";
+import { CircleCheck, AlertCircle, InfoIcon } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarHeader,
-} from "@/components/ui/sidebar";
 
 export default function ComponentShowcase() {
   return (
@@ -29,7 +18,6 @@ export default function ComponentShowcase() {
         <TabsTrigger value="cards">Cards</TabsTrigger>
         <TabsTrigger value="forms">Form Inputs</TabsTrigger>
         <TabsTrigger value="feedback">Feedback</TabsTrigger>
-        <TabsTrigger value="sidebar">Sidebar</TabsTrigger>
       </TabsList>
 
       {/* Buttons */}
@@ -345,175 +333,6 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 <Badge variant="live">Live</Badge>
 <Badge variant="completed">Completed</Badge>
 <Badge variant="cancelled">Cancelled</Badge>`}
-            </pre>
-          </div>
-        </div>
-      </TabsContent>
-
-      {/* Sidebar Components */}
-      <TabsContent value="sidebar" className="space-y-6">
-        <div className="space-y-6">
-          <h3 className="text-lg font-medium">Sidebar Component</h3>
-          
-          <div className="border rounded-lg p-4 bg-muted/50">
-            <h4 className="text-md font-medium mb-4">Mini Sidebar Preview</h4>
-            <div className="relative w-full max-w-md h-64 border rounded-md overflow-hidden bg-background">
-              <Sidebar 
-                className="relative border-r-0 w-64 h-full"
-                style={{ 
-                  backgroundColor: '#091F42',
-                  '--sidebar-background': '#091F42',
-                  '--sidebar-foreground': 'white',
-                  '--sidebar-accent': 'rgba(255, 255, 255, 0.1)',
-                  '--sidebar-accent-foreground': 'white',
-                  '--sidebar-border': 'rgba(255, 255, 255, 0.1)'
-                } as React.CSSProperties}
-              >
-                <SidebarHeader className="border-b border-white/10 pb-4 mb-4">
-                  <div className="px-2">
-                    <h2 className="text-lg font-semibold text-white">FOUNT</h2>
-                    <p className="text-sm text-white/70">Design System</p>
-                  </div>
-                </SidebarHeader>
-                <SidebarContent>
-                  <SidebarGroup>
-                    <SidebarGroupLabel className="text-white/70 text-xs uppercase tracking-wider">
-                      Navigation
-                    </SidebarGroupLabel>
-                    <SidebarGroupContent>
-                      <SidebarMenu>
-                        {[
-                          { title: "Home", icon: Home },
-                          { title: "Inbox", icon: Inbox },
-                          { title: "Calendar", icon: Calendar },
-                          { title: "Search", icon: Search },
-                          { title: "Settings", icon: Settings },
-                        ].map((item) => (
-                          <SidebarMenuItem key={item.title}>
-                            <SidebarMenuButton 
-                              className="text-white/90 hover:bg-white/10 hover:text-white data-[active=true]:bg-white/15 data-[active=true]:text-white"
-                            >
-                              <item.icon className="w-4 h-4" />
-                              <span>{item.title}</span>
-                            </SidebarMenuButton>
-                          </SidebarMenuItem>
-                        ))}
-                      </SidebarMenu>
-                    </SidebarGroupContent>
-                  </SidebarGroup>
-                </SidebarContent>
-              </Sidebar>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-muted p-4 rounded-md">
-          <h3 className="text-sm font-medium mb-3">Usage Guidelines</h3>
-          <ul className="list-disc pl-5 space-y-1 text-sm">
-            <li>Use the sidebar for primary navigation in your application</li>
-            <li>The sidebar is collapsible and responsive by default</li>
-            <li>Use <code className="text-xs">SidebarProvider</code> at the root of your app layout</li>
-            <li>Include a <code className="text-xs">SidebarTrigger</code> to allow users to toggle the sidebar</li>
-            <li>Group related navigation items using <code className="text-xs">SidebarGroup</code></li>
-            <li>Use icons with menu items for better visual hierarchy</li>
-            <li>The sidebar supports custom styling through CSS variables</li>
-          </ul>
-          
-          <div className="mt-4">
-            <h4 className="text-sm font-medium mb-2">Implementation Example</h4>
-            <pre className="text-xs bg-background p-3 rounded overflow-x-auto">
-{`// App Layout (App.tsx)
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/AppSidebar";
-
-<SidebarProvider>
-  <div className="min-h-screen flex w-full">
-    <AppSidebar />
-    <main className="flex-1">
-      <div className="sticky top-0 z-10 bg-background border-b p-4">
-        <SidebarTrigger className="mb-0" />
-      </div>
-      <div className="p-6">
-        {/* Your content here */}
-      </div>
-    </main>
-  </div>
-</SidebarProvider>
-
-// Sidebar Component (AppSidebar.tsx)
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarHeader,
-} from "@/components/ui/sidebar";
-
-const items = [
-  { title: "Home", url: "/", icon: Home },
-  { title: "Settings", url: "/settings", icon: Settings },
-];
-
-export function AppSidebar() {
-  return (
-    <Sidebar 
-      style={{ 
-        backgroundColor: '#091F42',
-        '--sidebar-background': '#091F42',
-        '--sidebar-foreground': 'white',
-      } as React.CSSProperties}
-    >
-      <SidebarHeader>
-        <h2 className="text-lg font-semibold text-white">App Name</h2>
-      </SidebarHeader>
-      <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel>Navigation</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon className="w-4 h-4" />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-      </SidebarContent>
-    </Sidebar>
-  );
-}`}
-            </pre>
-          </div>
-
-          <div className="mt-4">
-            <h4 className="text-sm font-medium mb-2">Custom Styling</h4>
-            <p className="text-xs text-muted-foreground mb-2">
-              The sidebar supports custom styling through CSS variables:
-            </p>
-            <pre className="text-xs bg-background p-3 rounded overflow-x-auto">
-{`// Custom sidebar styling
-<Sidebar 
-  style={{ 
-    backgroundColor: '#091F42',
-    '--sidebar-background': '#091F42',
-    '--sidebar-foreground': 'white',
-    '--sidebar-accent': 'rgba(255, 255, 255, 0.1)',
-    '--sidebar-accent-foreground': 'white',
-    '--sidebar-border': 'rgba(255, 255, 255, 0.1)'
-  } as React.CSSProperties}
->
-  {/* Sidebar content */}
-</Sidebar>`}
             </pre>
           </div>
         </div>

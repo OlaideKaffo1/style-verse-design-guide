@@ -58,6 +58,7 @@ export function AppSidebar() {
         '--sidebar-accent-foreground': 'white',
         '--sidebar-border': 'rgba(255, 255, 255, 0.1)'
       } as React.CSSProperties}
+      collapsible="icon"
     >
       <SidebarHeader className="border-b border-white/10 pb-4 mb-4">
         <div className="px-2">

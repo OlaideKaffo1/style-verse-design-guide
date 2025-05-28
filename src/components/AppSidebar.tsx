@@ -1,4 +1,6 @@
+
 import { Calendar, Home, Inbox, Search, Settings, Palette } from "lucide-react"
+import { useState } from "react"
 import {
   Sidebar,
   SidebarContent,
@@ -13,11 +15,13 @@ import {
 // Menu items
 const items = [
   {
+    id: "option1",
     title: "Menu Option 1",
     url: "#",
     icon: Home,
   },
   {
+    id: "option2",
     title: "Menu Option 2",
     url: "#",
     icon: Settings,
@@ -25,6 +29,8 @@ const items = [
 ]
 
 export function AppSidebar() {
+  const [selectedItem, setSelectedItem] = useState<string>("option1")
+
   return (
     <Sidebar 
       className="border-r-0"
@@ -50,9 +56,20 @@ export function AppSidebar() {
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton 
                     asChild
-                    className="text-white/90 hover:bg-white/10 hover:text-white data-[active=true]:bg-white/15 data-[active=true]:text-white"
+                    isActive={selectedItem === item.id}
+                    className={`text-white/90 hover:bg-white/10 hover:text-white transition-colors ${
+                      selectedItem === item.id 
+                        ? 'bg-blue-600 text-white' 
+                        : 'data-[active=true]:bg-blue-600 data-[active=true]:text-white'
+                    }`}
                   >
-                    <a href={item.url}>
+                    <a 
+                      href={item.url}
+                      onClick={(e) => {
+                        e.preventDefault()
+                        setSelectedItem(item.id)
+                      }}
+                    >
                       <item.icon className="w-4 h-4" />
                       <span>{item.title}</span>
                     </a>

@@ -59,7 +59,7 @@ export function AppSidebar() {
                     isActive={selectedItem === item.id}
                     className={`text-white/90 hover:bg-white/10 hover:text-white transition-colors ${
                       selectedItem === item.id 
-                        ? 'bg-white/15 text-white font-medium' 
+                        ? 'bg-white/15 text-primary font-medium' 
                         : ''
                     }`}
                   >
